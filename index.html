@@ -7,69 +7,108 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       background: #f4f4f4;
       color: #333;
     }
 
+    /* ---------- HEADER ---------- */
     header {
-      background: #111;
-      color: white;
-      padding: 60px 20px;
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      color: #f5f5f5;
+      background: 
+        linear-gradient(to left, rgba(0,0,0,0.85), rgba(0,0,0,0.4)),
+        url('hero-derecha.jpg') no-repeat right center/cover;
     }
 
     header h1 {
-      font-size: 36px;
+      font-size: 48px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     header p {
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 20px;
+      margin-top: 15px;
+      color: #ddd;
     }
 
+    /* ---------- BOTÓN ---------- */
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #28a745;
-      color: white;
+      margin-top: 30px;
+      padding: 15px 35px;
+      background: #c9a24d;
+      color: #0e0e0e;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 30px;
       font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b18d3c;
     }
 
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
+    /* ---------- SERVICIOS ---------- */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      gap: 30px;
+      margin-top: 40px;
     }
 
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       text-align: center;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-8px);
     }
 
+    /* ---------- PLANES (FONDO NEGRO CON IMAGEN IZQUIERDA) ---------- */
+    #planes {
+      position: relative;
+      color: #f5f5f5;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)),
+        url('planes-izquierda.jpg') no-repeat left center/cover;
+    }
+
+    #planes .card {
+      background: rgba(255,255,255,0.95);
+      color: #111;
+    }
+
+    #planes h2 {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
-      background: #111;
-      color: white;
+      background: #0e0e0e;
+      color: #aaa;
       text-align: center;
       padding: 30px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -78,9 +117,11 @@
 
   <!-- PORTADA -->
   <header>
-    <h1>Asesorías de Entrenamiento Personal</h1>
-    <p>Planes personalizados para transformar tu físico y tu rendimiento</p>
-    <a href="#planes" class="btn">Empieza hoy</a>
+    <div>
+      <h1>Entrenamiento Personal</h1>
+      <p>Transforma tu físico con un enfoque profesional y exclusivo</p>
+      <a href="#planes" class="btn">Empieza hoy</a>
+    </div>
   </header>
 
   <!-- SERVICIOS -->
@@ -90,17 +131,17 @@
     <div class="services">
       <div class="card">
         <h3>Entrenamiento Personalizado</h3>
-        <p>Plan adaptado a tu nivel, objetivos y disponibilidad.</p>
+        <p>Plan adaptado a tu cuerpo, objetivos y estilo de vida.</p>
       </div>
 
       <div class="card">
-        <h3>Seguimiento Semanal</h3>
-        <p>Ajustes constantes para asegurar resultados reales.</p>
+        <h3>Seguimiento Profesional</h3>
+        <p>Control continuo para maximizar resultados.</p>
       </div>
 
       <div class="card">
         <h3>Asesoría Online</h3>
-        <p>Entrena desde casa con apoyo profesional.</p>
+        <p>Entrena desde cualquier lugar con apoyo experto.</p>
       </div>
     </div>
   </section>
@@ -109,16 +150,16 @@
   <section style="background:#fff;">
     <h2 style="text-align:center;">¿Por qué entrenar conmigo?</h2>
     <p style="text-align:center; max-width:700px; margin:auto;">
-      Más de X años de experiencia ayudando a personas a mejorar su cuerpo,
-      su salud y su confianza mediante entrenamientos guiados y efectivos.
+      Metodología basada en ciencia, experiencia real y compromiso absoluto
+      con tu progreso físico y mental.
     </p>
   </section>
 
   <!-- PLANES -->
-  <section id="planes" style="background:#111; color:white;">
+  <section id="planes">
     <h2 style="text-align:center;">Planes de Entrenamiento</h2>
     <p style="text-align:center; max-width:600px; margin:auto;">
-      Elige el plan que mejor se adapte a ti y empieza hoy mismo
+      Resultados reales para personas comprometidas
     </p>
 
     <div class="services">
@@ -127,20 +168,20 @@
         <h3>Básico</h3>
         <p><strong>49€/mes</strong></p>
         <p>
-          ✔ Plan de entrenamiento<br>
-          ✔ Rutina semanal<br>
+          ✔ Rutina estructurada<br>
+          ✔ Plan mensual<br>
           ✖ Seguimiento
         </p>
         <a href="#contacto" class="btn">Elegir</a>
       </div>
 
-      <div class="card" style="border:2px solid #28a745;">
+      <div class="card" style="border:2px solid #c9a24d;">
         <h3>Pro</h3>
         <p><strong>79€/mes</strong></p>
         <p>
           ✔ Plan personalizado<br>
           ✔ Seguimiento semanal<br>
-          ✔ Soporte por WhatsApp
+          ✔ Soporte directo
         </p>
         <a href="#contacto" class="btn">Más popular</a>
       </div>
@@ -149,7 +190,7 @@
         <h3>Premium</h3>
         <p><strong>119€/mes</strong></p>
         <p>
-          ✔ Todo lo anterior<br>
+          ✔ Servicio completo<br>
           ✔ Videollamadas<br>
           ✔ Ajustes ilimitados
         </p>
@@ -163,18 +204,13 @@
   <section id="contacto">
     <h2 style="text-align:center;">Contacto</h2>
     <p style="text-align:center;">
-      Escríbeme para comenzar tu asesoría personalizada.
-    </p>
-
-    <p style="text-align:center;">
-      📩 Email: ealmaydki@gmail.com  
-      <br>
-      📱 WhatsApp: +34 640 38 94 12
+      📩 contacto@tudominio.com<br>
+      📱 +34 600 000 000
     </p>
   </section>
 
   <footer>
-    © 2026 - Asesorías de Entrenamiento
+    © 2026 · Entrenamiento Personal Premium
   </footer>
 
 </body>
