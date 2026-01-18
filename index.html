@@ -12,16 +12,15 @@ body {
   color: #d0d0d0;
 }
 
-/* ---------- NAV ---------- */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
-  right: 0;
   width: 100%;
   padding: 20px 40px;
   display: flex;
   justify-content: flex-end;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
   z-index: 1000;
 }
 
@@ -33,11 +32,7 @@ nav a {
   letter-spacing: 1px;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- HEADER ---------- */
+/* HEADER */
 header {
   min-height: 100vh;
   background: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b") center/cover;
@@ -97,28 +92,33 @@ h2 {
   color: white;
 }
 
-/* ---------- CARDS ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 40px;
+  margin-top: 60px;
 }
 
 .card {
   background: #161616;
-  padding: 30px;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
   border-radius: 12px;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* ---------- TIENDA ---------- */
-.tienda {
-  text-align: center;
-  color: #aaa;
+.highlight {
+  color: #c9a24d;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 footer {
   background: #090909;
   text-align: center;
@@ -130,16 +130,14 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#asesoramientos">Asesoramientos</a>
   <a href="#cambio">Cambio físico</a>
   <a href="#asesorados">Asesorados</a>
   <a href="#sobre-mi">Sobre mí</a>
-  <a href="#tienda">Tienda y productos</a>
+  <a href="#tienda">Tienda</a>
 </nav>
 
-<!-- PORTADA -->
 <header>
   <div>
     <h1>Entrenamiento Personal</h1>
@@ -148,7 +146,6 @@ footer {
   </div>
 </header>
 
-<!-- ASESORAMIENTOS -->
 <section id="asesoramientos">
   <h2>Asesoramientos</h2>
   <div class="grid">
@@ -158,37 +155,60 @@ footer {
   </div>
 </section>
 
-<!-- CAMBIO FÍSICO -->
 <section id="cambio">
   <h2>Cambio físico</h2>
   <p style="text-align:center;">
-    Transformaciones reales basadas en constancia y método.
+    Transformaciones reales con personas reales.
   </p>
 </section>
 
 <!-- ASESORADOS -->
 <section id="asesorados">
   <h2>Asesorados</h2>
-  <p style="text-align:center;">
-    Resultados de personas que confiaron en el proceso.
-  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="mario.png" alt="Cambio físico Mario">
+      <h3>Mario · 40 días</h3>
+      <p>
+        Cambio físico realizado en solo 40 días.
+        A pesar de tener trabajo y muchas responsabilidades,
+        gracias a la flexibilidad del plan consiguió transformar su físico.
+      </p>
+      <p class="highlight">
+        ¿A qué esperas para comenzar tu cambio físico?
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="zoe.png" alt="Cambio físico Zoe">
+      <h3>Zoe · +13 kg</h3>
+      <p>
+        Pasó de pesar 50 kg a 63 kg en menos de un año.
+        Con dos trabajos y preparando oposiciones.
+      </p>
+      <p class="highlight">
+        ¿Cuál va a ser tu excusa?
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<!-- SOBRE MI -->
 <section id="sobre-mi">
   <h2>Sobre mí</h2>
   <p style="text-align:center; max-width:700px; margin:auto;">
-    Entrenador especializado en transformación física,
-    rendimiento y hábitos sostenibles.
+    Entrenador especializado en cambios físicos reales,
+    enfocados en constancia, método y resultados sostenibles.
   </p>
 </section>
 
-<!-- TIENDA -->
 <section id="tienda">
   <h2>Tienda y productos</h2>
-  <div class="tienda">
-    Próximamente planes, guías y programas exclusivos.
-  </div>
+  <p style="text-align:center;">
+    Próximamente planes y programas exclusivos.
+  </p>
 </section>
 
 <footer>
@@ -197,5 +217,3 @@ footer {
 
 </body>
 </html>
-
-
