@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Asesorías de Entrenamiento Personal</title>
+  <title>Entrenamiento Personal Premium</title>
 
   <style>
     body {
@@ -20,10 +20,26 @@
       justify-content: center;
       text-align: center;
       color: white;
+      position: relative;
 
       background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b");
       background-size: cover;
-      background-position: right center;
+      background-position: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    header div {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 20px;
     }
 
     header h1 {
@@ -65,32 +81,55 @@
     /* ---------- SERVICIOS ---------- */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
 
     .card {
       background: #fff;
-      padding: 35px;
-      border-radius: 12px;
+      border-radius: 14px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
       text-align: center;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 30px;
     }
 
     /* ---------- PLANES ---------- */
     #planes {
-      padding: 70px 20px;
       color: white;
+      position: relative;
 
       background-image: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1");
       background-size: cover;
-      background-position: left center;
+      background-position: center;
+    }
+
+    #planes::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+
+    #planes > * {
+      position: relative;
+      z-index: 2;
     }
 
     #planes .card {
@@ -98,18 +137,23 @@
       color: #111;
     }
 
-    #planes h2 {
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* ---------- FOOTER ---------- */
     footer {
       background: #0e0e0e;
       color: #aaa;
       text-align: center;
       padding: 30px;
       font-size: 14px;
+    }
+
+    /* ---------- MÓVIL ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -131,29 +175,29 @@
 
     <div class="services">
       <div class="card">
-        <h3>Entrenamiento Personalizado</h3>
-        <p>Plan adaptado a tu cuerpo, objetivos y estilo de vida.</p>
+        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155">
+        <div class="card-content">
+          <h3>Entrenamiento Personalizado</h3>
+          <p>Plan adaptado a tu cuerpo, objetivos y estilo de vida.</p>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Seguimiento Profesional</h3>
-        <p>Control continuo para maximizar resultados.</p>
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+        <div class="card-content">
+          <h3>Seguimiento Profesional</h3>
+          <p>Control continuo para maximizar resultados.</p>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Asesoría Online</h3>
-        <p>Entrena desde cualquier lugar con apoyo experto.</p>
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+        <div class="card-content">
+          <h3>Asesoría Online</h3>
+          <p>Entrena desde cualquier lugar con apoyo experto.</p>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- BENEFICIOS -->
-  <section style="background:#fff;">
-    <h2 style="text-align:center;">¿Por qué entrenar conmigo?</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-      Metodología basada en ciencia, experiencia real y compromiso absoluto
-      con tu progreso físico y mental.
-    </p>
   </section>
 
   <!-- PLANES -->
@@ -166,36 +210,30 @@
     <div class="services">
 
       <div class="card">
-        <h3>Básico</h3>
-        <p><strong>49€/mes</strong></p>
-        <p>
-          ✔ Rutina estructurada<br>
-          ✔ Plan mensual<br>
-          ✖ Seguimiento
-        </p>
-        <a href="#contacto" class="btn">Elegir</a>
+        <div class="card-content">
+          <h3>Básico</h3>
+          <p><strong>49€/mes</strong></p>
+          <p>Rutina estructurada · Plan mensual</p>
+          <a href="#contacto" class="btn">Elegir</a>
+        </div>
       </div>
 
       <div class="card" style="border:2px solid #c9a24d;">
-        <h3>Pro</h3>
-        <p><strong>79€/mes</strong></p>
-        <p>
-          ✔ Plan personalizado<br>
-          ✔ Seguimiento semanal<br>
-          ✔ Soporte directo
-        </p>
-        <a href="#contacto" class="btn">Más popular</a>
+        <div class="card-content">
+          <h3>Pro</h3>
+          <p><strong>79€/mes</strong></p>
+          <p>Plan personalizado · Seguimiento semanal</p>
+          <a href="#contacto" class="btn">Más popular</a>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Premium</h3>
-        <p><strong>119€/mes</strong></p>
-        <p>
-          ✔ Servicio completo<br>
-          ✔ Videollamadas<br>
-          ✔ Ajustes ilimitados
-        </p>
-        <a href="#contacto" class="btn">Elegir</a>
+        <div class="card-content">
+          <h3>Premium</h3>
+          <p><strong>119€/mes</strong></p>
+          <p>Servicio completo · Ajustes ilimitados</p>
+          <a href="#contacto" class="btn">Elegir</a>
+        </div>
       </div>
 
     </div>
