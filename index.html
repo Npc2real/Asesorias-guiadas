@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      background: #0e0e0e;
+      color: #d0d0d0;
     }
 
     /* ---------- HEADER ---------- */
@@ -19,8 +19,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
       position: relative;
+      color: #f1f1f1;
 
       background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b");
       background-size: cover;
@@ -30,9 +30,8 @@
     header::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      inset: 0;
+      background: rgba(0,0,0,0.75);
     }
 
     header div {
@@ -43,56 +42,65 @@
     }
 
     header h1 {
-      font-size: 48px;
-      letter-spacing: 2px;
+      font-size: 46px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 20px;
-      margin-top: 15px;
-      color: #ddd;
+      font-size: 18px;
+      color: #b0b0b0;
     }
 
     /* ---------- BOTÓN ---------- */
     .btn {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 35px;
-      background: #c9a24d;
-      color: #0e0e0e;
+      margin-top: 35px;
+      padding: 14px 34px;
+      background: transparent;
+      color: #c9a24d;
+      border: 1px solid #c9a24d;
       text-decoration: none;
       border-radius: 30px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: #b18d3c;
+      background: #c9a24d;
+      color: #0e0e0e;
     }
 
     section {
-      padding: 70px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 22px;
+      color: #f1f1f1;
     }
 
     /* ---------- SERVICIOS ---------- */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      gap: 35px;
+      margin-top: 50px;
     }
 
     .card {
-      background: #fff;
+      background: #161616;
       border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       overflow: hidden;
-      text-align: center;
-      transition: 0.3s;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      transition: 0.4s;
     }
 
     .card:hover {
@@ -103,17 +111,28 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
+      filter: grayscale(20%) brightness(80%);
     }
 
     .card-content {
       padding: 30px;
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #f1f1f1;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      color: #aaa;
+      font-size: 15px;
     }
 
     /* ---------- PLANES ---------- */
     #planes {
-      color: white;
       position: relative;
-
       background-image: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1");
       background-size: cover;
       background-position: center;
@@ -122,9 +141,8 @@
     #planes::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
+      inset: 0;
+      background: rgba(0,0,0,0.85);
     }
 
     #planes > * {
@@ -133,22 +151,32 @@
     }
 
     #planes .card {
-      background: rgba(255,255,255,0.95);
-      color: #111;
+      background: #1c1c1c;
+      border: 1px solid #2a2a2a;
+    }
+
+    #planes .card p {
+      color: #bbb;
+    }
+
+    #planes strong {
+      color: #c9a24d;
+      font-size: 22px;
     }
 
     footer {
-      background: #0e0e0e;
-      color: #aaa;
+      background: #0b0b0b;
+      color: #666;
       text-align: center;
       padding: 30px;
-      font-size: 14px;
+      font-size: 13px;
+      letter-spacing: 1px;
     }
 
     /* ---------- MÓVIL ---------- */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 32px;
+        font-size: 30px;
       }
 
       header p {
@@ -164,21 +192,21 @@
   <header>
     <div>
       <h1>Entrenamiento Personal</h1>
-      <p>Transforma tu físico con un enfoque profesional y exclusivo</p>
+      <p>Rendimiento, disciplina y resultados reales</p>
       <a href="#planes" class="btn">Empieza hoy</a>
     </div>
   </header>
 
   <!-- SERVICIOS -->
   <section>
-    <h2 style="text-align:center;">Servicios</h2>
+    <h2>Servicios</h2>
 
     <div class="services">
       <div class="card">
         <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155">
         <div class="card-content">
           <h3>Entrenamiento Personalizado</h3>
-          <p>Plan adaptado a tu cuerpo, objetivos y estilo de vida.</p>
+          <p>Plan diseñado para tu cuerpo y objetivos reales.</p>
         </div>
       </div>
 
@@ -186,7 +214,7 @@
         <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
         <div class="card-content">
           <h3>Seguimiento Profesional</h3>
-          <p>Control continuo para maximizar resultados.</p>
+          <p>Análisis, ajustes y control constante.</p>
         </div>
       </div>
 
@@ -194,7 +222,7 @@
         <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
         <div class="card-content">
           <h3>Asesoría Online</h3>
-          <p>Entrena desde cualquier lugar con apoyo experto.</p>
+          <p>Entrena desde cualquier lugar con método.</p>
         </div>
       </div>
     </div>
@@ -202,10 +230,7 @@
 
   <!-- PLANES -->
   <section id="planes">
-    <h2 style="text-align:center;">Planes de Entrenamiento</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">
-      Resultados reales para personas comprometidas
-    </p>
+    <h2>Planes de Entrenamiento</h2>
 
     <div class="services">
 
@@ -218,7 +243,7 @@
         </div>
       </div>
 
-      <div class="card" style="border:2px solid #c9a24d;">
+      <div class="card" style="border-color:#c9a24d;">
         <div class="card-content">
           <h3>Pro</h3>
           <p><strong>79€/mes</strong></p>
@@ -241,8 +266,8 @@
 
   <!-- CONTACTO -->
   <section id="contacto">
-    <h2 style="text-align:center;">Contacto</h2>
-    <p style="text-align:center;">
+    <h2>Contacto</h2>
+    <p style="text-align:center; color:#aaa;">
       📩 contacto@tudominio.com<br>
       📱 +34 600 000 000
     </p>
