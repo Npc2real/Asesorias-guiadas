@@ -1,281 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Entrenamiento Personal Premium</title>
+<meta charset="UTF-8">
+<title>Entrenamiento Personal Premium</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #0e0e0e;
-      color: #d0d0d0;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0e0e0e;
+  color: #d0d0d0;
+}
 
-    /* ---------- HEADER ---------- */
-    header {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      color: #f1f1f1;
+/* ---------- NAV ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
 
-      background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b");
-      background-size: cover;
-      background-position: center;
-    }
+nav a {
+  color: #c9a24d;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
 
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-    }
+nav a:hover {
+  text-decoration: underline;
+}
 
-    header div {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      padding: 20px;
-    }
+/* ---------- HEADER ---------- */
+header {
+  min-height: 100vh;
+  background: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
 
-    header h1 {
-      font-size: 46px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
 
-    header p {
-      font-size: 18px;
-      color: #b0b0b0;
-    }
+header div {
+  position: relative;
+  z-index: 2;
+}
 
-    /* ---------- BOTÓN ---------- */
-    .btn {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 14px 34px;
-      background: transparent;
-      color: #c9a24d;
-      border: 1px solid #c9a24d;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      transition: 0.3s;
-    }
+header h1 {
+  color: white;
+  font-size: 48px;
+  letter-spacing: 3px;
+}
 
-    .btn:hover {
-      background: #c9a24d;
-      color: #0e0e0e;
-    }
+header p {
+  color: #aaa;
+}
 
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 32px;
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+  text-decoration: none;
+  border-radius: 30px;
+}
 
-    h2 {
-      text-align: center;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-size: 22px;
-      color: #f1f1f1;
-    }
+.btn:hover {
+  background: #c9a24d;
+  color: #0e0e0e;
+}
 
-    /* ---------- SERVICIOS ---------- */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 35px;
-      margin-top: 50px;
-    }
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .card {
-      background: #161616;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-      transition: 0.4s;
-    }
+h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  color: white;
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-    }
+/* ---------- CARDS ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      filter: grayscale(20%) brightness(80%);
-    }
+.card {
+  background: #161616;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
 
-    .card-content {
-      padding: 30px;
-      text-align: center;
-    }
+/* ---------- TIENDA ---------- */
+.tienda {
+  text-align: center;
+  color: #aaa;
+}
 
-    .card h3 {
-      color: #f1f1f1;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    .card p {
-      color: #aaa;
-      font-size: 15px;
-    }
-
-    /* ---------- PLANES ---------- */
-    #planes {
-      position: relative;
-      background-image: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1");
-      background-size: cover;
-      background-position: center;
-    }
-
-    #planes::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-    }
-
-    #planes > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    #planes .card {
-      background: #1c1c1c;
-      border: 1px solid #2a2a2a;
-    }
-
-    #planes .card p {
-      color: #bbb;
-    }
-
-    #planes strong {
-      color: #c9a24d;
-      font-size: 22px;
-    }
-
-    footer {
-      background: #0b0b0b;
-      color: #666;
-      text-align: center;
-      padding: 30px;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-
-    /* ---------- MÓVIL ---------- */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 30px;
-      }
-
-      header p {
-        font-size: 16px;
-      }
-    }
-  </style>
+/* ---------- FOOTER ---------- */
+footer {
+  background: #090909;
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- PORTADA -->
-  <header>
-    <div>
-      <h1>Entrenamiento Personal</h1>
-      <p>Rendimiento, disciplina y resultados reales</p>
-      <a href="#planes" class="btn">Empieza hoy</a>
-    </div>
-  </header>
+<!-- NAV -->
+<nav>
+  <a href="#asesoramientos">Asesoramientos</a>
+  <a href="#cambio">Cambio físico</a>
+  <a href="#asesorados">Asesorados</a>
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#tienda">Tienda y productos</a>
+</nav>
 
-  <!-- SERVICIOS -->
-  <section>
-    <h2>Servicios</h2>
+<!-- PORTADA -->
+<header>
+  <div>
+    <h1>Entrenamiento Personal</h1>
+    <p>Disciplina · Método · Resultados</p>
+    <a href="#asesoramientos" class="btn">Empieza hoy</a>
+  </div>
+</header>
 
-    <div class="services">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155">
-        <div class="card-content">
-          <h3>Entrenamiento Personalizado</h3>
-          <p>Plan diseñado para tu cuerpo y objetivos reales.</p>
-        </div>
-      </div>
+<!-- ASESORAMIENTOS -->
+<section id="asesoramientos">
+  <h2>Asesoramientos</h2>
+  <div class="grid">
+    <div class="card">Entrenamiento personalizado</div>
+    <div class="card">Seguimiento profesional</div>
+    <div class="card">Asesoría online</div>
+  </div>
+</section>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-        <div class="card-content">
-          <h3>Seguimiento Profesional</h3>
-          <p>Análisis, ajustes y control constante.</p>
-        </div>
-      </div>
+<!-- CAMBIO FÍSICO -->
+<section id="cambio">
+  <h2>Cambio físico</h2>
+  <p style="text-align:center;">
+    Transformaciones reales basadas en constancia y método.
+  </p>
+</section>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
-        <div class="card-content">
-          <h3>Asesoría Online</h3>
-          <p>Entrena desde cualquier lugar con método.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ASESORADOS -->
+<section id="asesorados">
+  <h2>Asesorados</h2>
+  <p style="text-align:center;">
+    Resultados de personas que confiaron en el proceso.
+  </p>
+</section>
 
-  <!-- PLANES -->
-  <section id="planes">
-    <h2>Planes de Entrenamiento</h2>
+<!-- SOBRE MI -->
+<section id="sobre-mi">
+  <h2>Sobre mí</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Entrenador especializado en transformación física,
+    rendimiento y hábitos sostenibles.
+  </p>
+</section>
 
-    <div class="services">
+<!-- TIENDA -->
+<section id="tienda">
+  <h2>Tienda y productos</h2>
+  <div class="tienda">
+    Próximamente planes, guías y programas exclusivos.
+  </div>
+</section>
 
-      <div class="card">
-        <div class="card-content">
-          <h3>Básico</h3>
-          <p><strong>49€/mes</strong></p>
-          <p>Rutina estructurada · Plan mensual</p>
-          <a href="#contacto" class="btn">Elegir</a>
-        </div>
-      </div>
-
-      <div class="card" style="border-color:#c9a24d;">
-        <div class="card-content">
-          <h3>Pro</h3>
-          <p><strong>79€/mes</strong></p>
-          <p>Plan personalizado · Seguimiento semanal</p>
-          <a href="#contacto" class="btn">Más popular</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-content">
-          <h3>Premium</h3>
-          <p><strong>119€/mes</strong></p>
-          <p>Servicio completo · Ajustes ilimitados</p>
-          <a href="#contacto" class="btn">Elegir</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p style="text-align:center; color:#aaa;">
-      📩 contacto@tudominio.com<br>
-      📱 +34 600 000 000
-    </p>
-  </section>
-
-  <footer>
-    © 2026 · Entrenamiento Personal Premium
-  </footer>
+<footer>
+  © 2026 · Entrenamiento Personal Premium
+</footer>
 
 </body>
 </html>
+
+
