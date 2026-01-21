@@ -1,15 +1,23 @@
-<!DOCTYPE html>
+z<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Entrenamiento Personal Premium</title>
 
+<!-- FUENTES PREMIUM -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #0e0e0e;
   color: #d0d0d0;
+  scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -20,7 +28,7 @@ nav {
   padding: 20px 40px;
   display: flex;
   justify-content: flex-end;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   z-index: 1000;
 }
 
@@ -28,7 +36,7 @@ nav a {
   color: #c9a24d;
   text-decoration: none;
   margin-left: 25px;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 1px;
 }
 
@@ -53,70 +61,98 @@ header::before {
 header div {
   position: relative;
   z-index: 2;
+  animation: fadeUp 1.2s ease;
 }
 
 header h1 {
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  font-size: 48px;
+  font-size: 52px;
   letter-spacing: 3px;
 }
 
 header p {
   color: #aaa;
+  margin-top: 10px;
 }
 
+/* BOTONES */
 .btn {
   display: inline-block;
-  margin-top: 30px;
-  padding: 14px 32px;
+  margin-top: 25px;
+  padding: 14px 34px;
   border: 1px solid #c9a24d;
   color: #c9a24d;
   text-decoration: none;
   border-radius: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all .3s ease;
 }
 
 .btn:hover {
   background: #c9a24d;
   color: #0e0e0e;
+  box-shadow: 0 0 20px rgba(201,162,77,0.6);
 }
 
+/* SECCIONES */
 section {
-  padding: 100px 20px;
+  padding: 110px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
 h2 {
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   letter-spacing: 2px;
   color: white;
 }
 
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
   gap: 40px;
   margin-top: 60px;
 }
 
+/* TARJETAS */
 .card {
   background: #161616;
-  padding: 25px;
-  border-radius: 14px;
+  padding: 35px;
+  border-radius: 18px;
   text-align: center;
+  transition: transform .4s ease, box-shadow .4s ease;
+  animation: fadeUp 1s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.6);
 }
 
 .card img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-bottom: 20px;
   object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .highlight {
   color: #c9a24d;
-  margin-top: 15px;
   font-weight: bold;
+}
+
+/* SOBRE MI */
+#sobre-mi p {
+  line-height: 1.9;
 }
 
 /* FOOTER */
@@ -126,6 +162,40 @@ footer {
   padding: 30px;
   color: #666;
 }
+
+/* WHATSAPP FLOTANTE */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: white;
+  padding: 15px 18px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 2000;
+}
+
+/* ANIMACIONES */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MÓVIL */
+@media(max-width:768px) {
+  header h1 {
+    font-size: 38px;
+  }
+}
 </style>
 </head>
 
@@ -133,88 +203,77 @@ footer {
 
 <nav>
   <a href="#asesoramientos">Asesoramientos</a>
-  <a href="#cambio">Cambio físico</a>
-  <a href="#asesorados">Asesorados</a>
+  <a href="#asesorados">Resultados</a>
   <a href="#sobre-mi">Sobre mí</a>
-  <a href="#tienda">Tienda</a>
 </nav>
 
 <header>
   <div>
     <h1>Entrenamiento Personal</h1>
     <p>Disciplina · Método · Resultados</p>
-    <a href="#asesoramientos" class="btn">Empieza hoy</a>
+    <a href="https://wa.me/34614436039" class="btn">Empieza hoy</a>
   </div>
 </header>
 
 <section id="asesoramientos">
   <h2>Asesoramientos</h2>
+
   <div class="grid">
-    <div class="card">Entrenamiento personalizado</div>
-    <div class="card">Seguimiento profesional</div>
-    <div class="card">Asesoría online</div>
+    <div class="card">
+      <h3 class="highlight">Solo Dieta</h3>
+      <p>Plan nutricional personalizado, adaptado a tu objetivo, tus gustos y tu estilo de vida.</p>
+      <a href="https://wa.me/34614436039" class="btn">Quiero empezar</a>
+    </div>
+
+    <div class="card">
+      <h3 class="highlight">Solo Entrenamiento</h3>
+      <p>Programa de entrenamiento hecho a medida para tus metas y nivel actual.</p>
+      <a href="https://wa.me/34614436039" class="btn">Quiero empezar</a>
+    </div>
+
+    <div class="card">
+      <h3 class="highlight">Pack Completo</h3>
+      <p>Entrenamiento + Nutrición + seguimiento constante para lograr tu mejor versión.</p>
+      <a href="https://wa.me/34614436039" class="btn">Quiero empezar</a>
+    </div>
   </div>
 </section>
 
-<section id="cambio">
-  <h2>Cambio físico</h2>
-  <p style="text-align:center;">
-    Transformaciones reales con personas reales.
-  </p>
-</section>
-
-<!-- ASESORADOS -->
 <section id="asesorados">
-  <h2>Asesorados</h2>
+  <h2>Resultados reales</h2>
 
   <div class="grid">
-
     <div class="card">
-      <img src="mario.jpg" alt="Cambio físico Mario">
+      <img src="mario.jpg">
       <h3>Mario · 40 días</h3>
-      <p>
-        Cambio físico realizado en solo 40 días.
-        A pesar de tener trabajo y muchas responsabilidades,
-        gracias a la flexibilidad del plan consiguió transformar su físico.
-      </p>
-      <p class="highlight">
-        ¿A qué esperas para comenzar tu cambio físico?
-      </p>
+      <p>Cambio físico real con trabajo, constancia y método.</p>
+      <a href="https://wa.me/34614436039" class="btn">Quiero mi cambio</a>
     </div>
 
     <div class="card">
-      <img src="zoe.jpg" alt="Cambio físico Zoe">
+      <img src="zoe.jpg">
       <h3>Zoe · +13 kg</h3>
-      <p>
-        Pasó de pesar 50 kg a 63 kg en menos de un año.
-        Con dos trabajos y preparando oposiciones.
-      </p>
-      <p class="highlight">
-        ¿Cuál va a ser tu excusa?
-      </p>
+      <p>Transformación completa incluso con poco tiempo disponible.</p>
+      <a href="https://wa.me/34614436039" class="btn">Quiero mi cambio</a>
     </div>
-
   </div>
 </section>
 
 <section id="sobre-mi">
   <h2>Sobre mí</h2>
-  <p style="text-align:center; max-width:700px; margin:auto;">
-    Entrenador especializado en cambios físicos reales,
-    enfocados en constancia, método y resultados sostenibles.
-  </p>
-</section>
-
-<section id="tienda">
-  <h2>Tienda y productos</h2>
-  <p style="text-align:center;">
-    Próximamente planes y programas exclusivos.
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Soy <strong>Marouan</strong>, un apasionado del entrenamiento y la nutrición que decidió dejar de poner excusas.<br><br>
+    No nací con un físico perfecto, entendí que con disciplina todo es posible.<br><br>
+    Mi objetivo es ayudarte a lograr tu mejor versión física y mental.<br><br>
+    <span class="highlight">Nada es imposible si te lo propones.</span>
   </p>
 </section>
 
 <footer>
   © 2026 · Entrenamiento Personal Premium
 </footer>
+
+<a href="https://wa.me/34614436039" class="whatsapp">💬</a>
 
 </body>
 </html>
